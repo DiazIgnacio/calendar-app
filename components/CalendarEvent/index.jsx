@@ -14,10 +14,10 @@ const CalendarEvent = ({ props }) => {
   const json = router.query.event ? JSON.parse(router.query.event) : null
   const id = json?.id || useId()
   const { newEvent, updateEvent, deleteEvent } = useCalendar()
-  const [event, setEvent] = useState()
+  const [event, setEvent] = useState({})
 
   useEffect(() => {
-    setEvent(json)
+    json && setEvent(json)
   }, [])
 
   const handleInputChange = (e) =>
