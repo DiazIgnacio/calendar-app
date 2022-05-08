@@ -8,10 +8,7 @@ import FullCalendar from '@fullcalendar/react'
 import interactionPlugin from '@fullcalendar/interaction'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import dayGridPlugin from '@fullcalendar/daygrid'
-
-import styles from './styles.module.scss'
-
-export default function Calendar(props) {
+export default function Calendar({ ...props }) {
   const { calendarData: events } = useCalendar()
   const { isLogged } = useData()
   const router = useRouter()
@@ -30,7 +27,10 @@ export default function Calendar(props) {
   }
 
   const editEventHandler = (event) => {
-    router.push({ pathname: '/event', query: { event: JSON.stringify(event.event) } })
+    router.push({
+      pathname: '/event',
+      query: { event: JSON.stringify(event.event) },
+    })
   }
 
   const headerToolbar = {
