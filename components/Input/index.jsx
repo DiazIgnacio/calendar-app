@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 
-const Input = ({ ...props }) => {
-  return <input className={styles.input} {...props} />
+const Input = ({ className, ...props }) => {
+  return <input className={`${styles.input} ${className ?? ''}`} {...props} />
 }
 
 export default Input

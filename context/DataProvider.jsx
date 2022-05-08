@@ -14,7 +14,8 @@ export const DataProvider = ({ children }) => {
       localStorage.setItem('logged', JSON.stringify(logged))
 
       const usersFromStorage = JSON.parse(localStorage.getItem('users')) || []
-      usersFromStorage.push(logged)
+      console.log(usersFromStorage)
+      usersFromStorage.push({ name: logged, id: Math.random() })
       setUsers(usersFromStorage)
       return logged
     },
@@ -23,6 +24,18 @@ export const DataProvider = ({ children }) => {
       localStorage.removeItem('logged')
       window.location.href = '/login'
       return true
+    },
+    addUser: (name) => {
+      const usersFromStorage = JSON.parse(localStorage.getItem('users'))
+      usersFromStorage.push({ name, id: Math.random() })
+      setUsers(usersFromStorage)
+      return usersFromStorage
+    },
+    removeUser: (id) => {
+      const usersFromStorage = JSON.parse(localStorage.getItem('users'))
+      const filteredUsers = usersFromStorage.filter((user) => user.id !== id)
+      setUsers([...filteredUsers])
+      return filteredUsers
     },
   }))
 
