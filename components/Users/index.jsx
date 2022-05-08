@@ -13,9 +13,7 @@ const Users = () => {
       <Container>
         <h1 className={styles.title}>Users</h1>
         <ul>
-          {users.map((user, index) => (
-            <li key={index}>{user}</li>
-          ))}
+          {users && users.map((user, index) => <li key={index}>{user}</li>)}
         </ul>
       </Container>
     </>
