@@ -1,3 +1,5 @@
-export default function DashboardPage() {
-  return <h1>Dashboard</h1>
+import Dashboard from 'components/Dashboard'
+
+export default function LoginPage() {
+  return <Dashboard />
 }

@@ -7,6 +7,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <Link href="/login">Login</Link>
+        <Link href="/dashboard">Dashboard</Link>
       </Head>
     </div>
   )
