@@ -1,14 +1,17 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import { useEffect } from 'react'
+
+import { useData } from 'context/DataProvider'
+
+import Dashboard from 'components/Dashboard/index'
+import Login from 'components/Login/index'
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <Link href="/login">Login</Link>
-        <Link href="/dashboard">Dashboard</Link>
-      </Head>
-    </div>
-  )
+  const { isLogged } = useData()
+  let logged = false
+
+  useEffect(() => {
+    logged = isLogged()
+  }, [])
+
+  return logged ? <Dashboard /> : <Login />
 }
