@@ -4,7 +4,7 @@ export const DataContext = createContext('')
 
 export const DataProvider = ({ children }) => {
   const [data, setData] = useState()
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState()
 
   const dataContext = useMemo(() => ({
     isLogged: () => localStorage.getItem('logged'),
@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
       localStorage.setItem('logged', JSON.stringify(logged))
 
       const usersFromStorage = JSON.parse(localStorage.getItem('users')) || []
-      usersFromStorage.push(JSON.stringify(logged))
+      usersFromStorage.push(logged)
       setUsers(usersFromStorage)
       return logged
     },

@@ -7,12 +7,16 @@ import styles from './styles.module.scss'
 
 const Users = () => {
   const { users } = useData()
-  console.log(users)
   return (
     <>
       <Navbar />
       <Container>
         <h1 className={styles.title}>Users</h1>
+        <ul>
+          {users.map((user, index) => (
+            <li key={index}>{user}</li>
+          ))}
+        </ul>
       </Container>
     </>
   )
