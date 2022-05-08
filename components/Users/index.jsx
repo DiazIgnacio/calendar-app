@@ -11,6 +11,7 @@ import styles from './styles.module.scss'
 const Users = () => {
   const router = useRouter()
   const { users, removeUser } = useData()
+
   const deleteUserHandler = (id) => {
     removeUser(id)
   }
@@ -25,7 +26,8 @@ const Users = () => {
       <Container>
         <h1 className={styles.title}>Users</h1>
         <ul style={{ margin: '0 0 50px 0', padding: 0 }}>
-          {users?.length !== 0 &&
+          {users &&
+            users?.length !== 0 &&
             users.map((user) => (
               <div className={styles.user} key={user.id}>
                 <Input type="text" value={user.name} disabled />
