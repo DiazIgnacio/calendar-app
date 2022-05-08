@@ -12,7 +12,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import styles from './styles.module.scss'
 
 export default function Calendar(props) {
-  const { calendarData: events, newEvent } = useCalendar()
+  const { calendarData: events } = useCalendar()
   const { isLogged } = useData()
   const router = useRouter()
 
@@ -21,8 +21,16 @@ export default function Calendar(props) {
   }, [])
 
   const addEventHandler = (event) => {
-    const { dayEl, ...e } = event
-    newEvent({ title: 'Tarea', ...e })
+    const { dayEl, el, view, jsEvent, ...e } = event
+
+    router.push({
+      pathname: '/event',
+      query: { event: JSON.stringify(e) },
+    })
+  }
+
+  const editEventHandler = (event) => {
+    router.push({ pathname: '/event', query: { event: JSON.stringify(event.event) } })
   }
 
   const headerToolbar = {
@@ -37,10 +45,11 @@ export default function Calendar(props) {
       initialView="dayGridMonth"
       editable
       selectable
-      select={addEventHandler}
       events={events}
       headerToolbar={headerToolbar}
+      select={addEventHandler}
       dateClick={addEventHandler}
+      eventClick={editEventHandler}
     />
   )
 }
