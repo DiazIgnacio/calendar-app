@@ -13,6 +13,19 @@ export const CalendarProvider = ({ children }) => {
       setCalendarData(events)
       return events
     },
+    updateEvent: (event, id) => {
+      const events = JSON.parse(localStorage.getItem('events'))
+      const eventToUpdate = events.filter((e) => e.id === id)[0]
+      Object.assign(eventToUpdate, event)
+      const filteredEvents = events.filter((e) => e.id !== id)
+      setCalendarData([...filteredEvents, eventToUpdate])
+    },
+    deleteEvent: (id) => {
+      const events = JSON.parse(localStorage.getItem('events'))
+      const filteredEvents = events.filter((e) => e.id !== id)
+      setCalendarData([...filteredEvents])
+      return filteredEvents
+    },
   }))
 
   useEffect(() => {
