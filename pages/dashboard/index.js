@@ -1,5 +1,5 @@
-import Dashboard from 'components/Dashboard'
+import Dashboard from 'src/components/Dashboard'
 
-export default function DashboardPage() {
-  return <Dashboard />
-}
+const DashboardPage = () => <Dashboard />
+
+export default DashboardPage

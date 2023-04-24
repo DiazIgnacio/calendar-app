@@ -1,10 +1,12 @@
-import 'normalize.css'
-import '../styles/globals.css'
+import { DataProvider } from 'src/context/DataProvider'
+import { CalendarProvider } from 'src/context/CalendarProvider'
+
 import '@fullcalendar/common/main.css'
 import '@fullcalendar/daygrid/main.css'
 import '@fullcalendar/timegrid/main.css'
-import { DataProvider } from 'context/DataProvider'
-import { CalendarProvider } from 'context/CalendarProvider'
+
+import 'normalize.css'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (

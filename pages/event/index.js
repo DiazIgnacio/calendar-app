@@ -1,7 +1,5 @@
-import CalendarEvent from 'components/CalendarEvent/index'
+import CalendarEvent from 'src/components/CalendarEvent'
 
-const CalendarEventPage = () => {
-  return <CalendarEvent />
-}
+const CalendarEventPage = () => <CalendarEvent />
 
 export default CalendarEventPage

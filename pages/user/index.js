@@ -1,7 +1,5 @@
-import User from 'components/Users/User'
+import User from 'src/components/Users/User'
 
-const UserPage = () => {
-  return <User />
-}
+const UserPage = () => <User />
 
 export default UserPage

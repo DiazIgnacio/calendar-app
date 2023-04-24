@@ -1,5 +1,5 @@
-import Users from 'components/Users'
+import Users from 'src/components/Users'
 
-export default function UsersPage() {
-  return <Users />
-}
+const UsersPage = () => <Users />
+
+export default UsersPage
