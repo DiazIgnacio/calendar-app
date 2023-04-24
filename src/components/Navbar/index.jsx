@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Link from 'next/link'
 
-import { useData } from 'src/context/DataProvider'
+import { useData } from 'context/DataProvider'
 
 import styles from './styles.module.scss'
 

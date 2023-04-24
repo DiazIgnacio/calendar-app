@@ -1,4 +1,4 @@
-import User from 'src/components/Users/User'
+import User from 'components/Users/User'
 
 const UserPage = () => <User />
 

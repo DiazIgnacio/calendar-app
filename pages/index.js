@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 
-import { useData } from 'src/context/DataProvider'
+import { useData } from 'context/DataProvider'
 
-import Dashboard from 'src/components/Dashboard'
-import Login from 'src/components/Login'
+import Dashboard from 'components/Dashboard'
+import Login from 'components/Login'
 
 export default function Home() {
   const { isLogged } = useData()

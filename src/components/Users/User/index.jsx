@@ -2,13 +2,13 @@ import { useState } from 'react'
 
 import { useRouter } from 'next/router'
 
-import { useData } from 'src/context/DataProvider'
+import { useData } from 'context/DataProvider'
 
-import Button from 'src/components/Button'
-import Container from 'src/components/Container'
-import Input from 'src/components/Input'
-import Navbar from 'src/components/Navbar'
-import Title from 'src/components/Title'
+import Button from 'components/Button'
+import Container from 'components/Container'
+import Input from 'components/Input'
+import Navbar from 'components/Navbar'
+import Title from 'components/Title'
 
 const User = () => {
   const router = useRouter()

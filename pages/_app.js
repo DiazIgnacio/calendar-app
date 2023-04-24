@@ -1,5 +1,5 @@
-import { DataProvider } from 'src/context/DataProvider'
-import { CalendarProvider } from 'src/context/CalendarProvider'
+import { DataProvider } from 'context/DataProvider'
+import { CalendarProvider } from 'context/CalendarProvider'
 
 import '@fullcalendar/common/main.css'
 import '@fullcalendar/daygrid/main.css'

@@ -1,8 +1,9 @@
-import Navbar from 'src/components/Navbar'
-import Container from 'src/components/Container'
 import dynamic from 'next/dynamic'
 
-const Calendar = dynamic(() => import('src/components/Calendar'), {
+import Navbar from 'components/Navbar'
+import Container from 'components/Container'
+
+const Calendar = dynamic(() => import('components/Calendar'), {
   ssr: false,
 })
 

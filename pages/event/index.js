@@ -1,4 +1,4 @@
-import CalendarEvent from 'src/components/CalendarEvent'
+import CalendarEvent from 'components/CalendarEvent'
 
 const CalendarEventPage = () => <CalendarEvent />
 

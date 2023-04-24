@@ -1,11 +1,11 @@
 import { useId, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import { useCalendar } from 'src/context/CalendarProvider'
+import { useCalendar } from 'context/CalendarProvider'
 
-import Input from 'src/components/Input'
-import Button from 'src/components/Button'
-import Container from 'src/components/Container'
+import Input from 'components/Input'
+import Button from 'components/Button'
+import Container from 'components/Container'
 
 import styles from './styles.module.scss'
 

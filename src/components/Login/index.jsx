@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { useData } from 'src/context/DataProvider'
-import Input from 'src/components/Input'
-import Button from 'src/components/Button'
+import { useData } from 'context/DataProvider'
+import Input from 'components/Input'
+import Button from 'components/Button'
 
 import styles from './styles.module.scss'
 

@@ -1,14 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es6",
+    "target": "ES5",
+    "module": "ES6",
     "baseUrl": ".",
     "paths": {
-      "components/*": ["./components/*"],
-      "context/*": ["src/context/*"],
-      "assets/*": ["./assets/*"]
+      "components/*": ["./src/components/*"],
+      "context/*": ["./src/context/*"],
+      "assets/*": ["./src/assets/*"]
     }
   },
   "exclude": ["node_modules", ".next"],
-  "include": ["components/**/*", "pages/**/*"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.js",
+    "./src/**/*.jsx"
+  ]
 }

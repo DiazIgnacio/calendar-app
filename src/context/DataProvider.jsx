@@ -14,7 +14,6 @@ export const DataProvider = ({ children }) => {
       localStorage.setItem('logged', JSON.stringify(logged))
 
       const usersFromStorage = JSON.parse(localStorage.getItem('users')) || []
-      console.log(usersFromStorage)
       usersFromStorage.push({ name: logged, id: Math.random() })
       setUsers(usersFromStorage)
       return logged
@@ -26,7 +25,7 @@ export const DataProvider = ({ children }) => {
       return true
     },
     addUser: (name) => {
-      const usersFromStorage = JSON.parse(localStorage.getItem('users'))
+      const usersFromStorage = JSON.parse(localStorage.getItem('users')) || []
       usersFromStorage.push({ name, id: Math.random() })
       setUsers(usersFromStorage)
       return usersFromStorage
@@ -40,13 +39,8 @@ export const DataProvider = ({ children }) => {
   }))
 
   useEffect(() => {
-    const logged = JSON.parse(JSON.stringify(localStorage.getItem('logged')))
+    const logged = JSON.parse(localStorage.getItem('logged'))
     setData(logged)
-
-    const usersFromStorage = JSON.parse(
-      JSON.stringify(localStorage.getItem('users'))
-    )
-    usersFromStorage && setUsers(usersFromStorage)
   }, [])
 
   useEffect(() => {

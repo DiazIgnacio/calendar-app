@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import { useCalendar } from 'src/context/CalendarProvider'
-import { useData } from 'src/context/DataProvider'
+import { useCalendar } from 'context/CalendarProvider'
+import { useData } from 'context/DataProvider'
 
 import FullCalendar from '@fullcalendar/react'
 import interactionPlugin from '@fullcalendar/interaction'
