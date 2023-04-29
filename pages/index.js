@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useEffect } from 'react'
 
 import { useData } from 'context/DataProvider'
@@ -13,5 +14,12 @@ export default function Home() {
     logged = isLogged()
   }, [])
 
-  return logged ? <Dashboard /> : <Login />
+  return (
+    <>
+      <Head>
+        <title>{logged ? 'Dashboard' : 'Login'}</title>
+      </Head>
+      {logged ? <Dashboard /> : <Login />}
+    </>
+  )
 }
